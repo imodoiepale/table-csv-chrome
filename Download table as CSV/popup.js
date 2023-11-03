@@ -6,6 +6,12 @@
         });
         window.close();
     });
+	document.getElementById("downloadDocsButton").addEventListener("click", () => {
+        chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+            chrome.tabs.executeScript(tabs[0].id, {file: "downloadDocs.js", allFrames:true});
+        });
+        window.close();
+    });
     chrome.storage.local.get(["encoding"], (result) => {
         if(result["encoding"] == "utf"){
             document.getElementById("encodingUTF8").checked = true;
