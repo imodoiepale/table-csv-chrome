@@ -18,6 +18,8 @@
       // Construct the filename
       let filename = `${withholderName}_${certificateNo}_${certificateDate}.pdf`;
 
+      console.log(filename)
+
       // Get the link from the 'WHT Certificate No' cell
       let link = cells[9].querySelector("a").href;
 
