@@ -7,3 +7,10 @@ chrome.contextMenus.onClicked.addListener((item, tab) => {
         chrome.tabs.executeScript(tab.id, {file: "downloadcsv.js", allFrames:true});
     }
 });
+// background.js
+chrome.browserAction.onClicked.addListener(function(tab) {
+    chrome.tabs.executeScript(tab.id, {
+      file: 'downloadDocs.js'
+    });
+  });
+  
